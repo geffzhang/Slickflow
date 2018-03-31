@@ -1,20 +1,20 @@
-# Slickflow
-.NET Workflow Engine
+﻿# Slickflow
+.NET Workflow Engine With Full Source Code 
 
-Slickflow is implemented by activity and transition iterative algorithm. It supports sequence, split/merge, sub-process, multi-instance, withdraw, sendback and reverse pattern.
+Slickflow is an open source project based on .NET platfrom, the product focus on workflow pattern, supports sequence, split/merge, sub-process, multi-instance, withdraw, sendback and reverse patterns.
 
-Slickflow used BPMN graphic elements to build its workflow natation.
+Slickflow is using BPMN natation to descript process diagram, the Slickflow designer is HTML5 graph editor and user friendly to business process communicaiton and business analysis.
 
-Slickflow designer is a HTML5, JQuery, SVG based web designer.
+Slickflow supports SQLSERVER, ORACLE, MySQL and other database, it implemented by Dapper.NET library.
 
-Slickflow project support SQLSERVER, ORACLE, MySQL database, it implemented by dapper library.
+WebDemo, MvcDemo and WinformDemo project are domonstated for different type enterprise information system.
 
-There are demo programs that you can find in WebDemo, WinformDemo project.
+Slickflow is suggusted to give programmers an flexible way to integrate workflow engine component into their internal product or customer projects. The programmers can write their own code segemnts based on the kernel product. 
 
-The source project is under LGPL license, we also provide customers commercial license. if you have any further inquery, please feel free to contact us: 
+Slickflow is very suitable for software teams or companies who want to integrated workflow engine into their products. 
 
-
-QQ(Author): 47743901
+Quick Start:
+https://github.com/besley/Slickflow/wiki
 
 Slickflow website:
 http://www.slickflow.com
@@ -22,8 +22,102 @@ http://www.slickflow.com
 Demo:
 http://www.slickflow.com/demo/index
 
+Designer Demo:
+http://demo.slickflow.com/slickflowdesigner/
+
 Document:
 http://www.slickflow.com/wiki/index
+
+The source project is under LGPL license, we also provide customers commercial license. if you have any further inquery, please feel free to contact us: 
+
+### EMail: sales@ruochisoft.com
+
+QQ(Author): 47743901
+
+
+
+### Slickflow(1.6.0.0) 企业版更新说明
+2017-12-10
+
+1. 引擎实现并行分支多实例（并行容器）的工作流模式；
+2. 设计器增加组合（Group）框选功能；
+3. 设计器增加定时结束类型节点，引擎实现流程定时结束功能；
+4. 增加流程图显示已完成路径的颜色显示（默认为红色）；
+   具体方法参见：kmain.renderCompletedTransitions()；
+5. 改进子流程启动过程的人员自动获取；
+6. Slickflow 集团版、多组户和SAAS平台版实现；
+1) 演示地址：http://gc.slickflow.com/sfadmin/
+2) 用户名密码：admin/123456
+
+数据库更新：
+
+WfProcess表变化字段（用于定时开始和定时结束场景）：
+1. StartType--开始类型
+2. StartExpression--开始表达式
+3. EndType--结束类型
+4. EndExpression--结束表达式
+
+
+2017-09-26
+
+自动定时任务模块：
+
+1. 设计器增加任务定时CRON表达式编辑器；
+2. 集成HangFire 任务定时作业组件，实现如下两个功能：
+1). 实现流程逾期自动结束任务作业；
+2). 实现流程定时启动任务作业；
+3. 新增WfJobs表，用于记录自动定时作业日志；
+4. 引擎接口读取所有任务类型节点列表GetAllTaskActivityList()方法改进：
+   按照流程图转移顺序返回活动节点列表数据；
+
+DEMO项目流程图显示MxGraph更新：
+
+5. 业务项目的流程图查看功能更新；
+   WebDEMO, MvcDEMO 流程图查看功能整合到SFD设计器项目，不再重复构建；
+6. WebDEMO请假流程增减意见表(HrsLeaveOpinion)；
+
+### Slickflow(1.5.9) 企业版更新说明
+1. 基于MxGraph的新版设计器发布；
+2. 设计器实现泳道(Swimlanes)功能；
+3. 设计器增加Actions 外部事件列表方法；
+4. 集成HangFire任务定时作业组件，实现流程逾期结束；
+
+
+### Slickflow(1.5.8) 企业版更新说明:
+1. 增加加签通过率类型字段CompareType，用于加签办理页面动态指定（非设计器指定，是运行时决策指定）变量传入；
+
+示例如下：
+
+        //动态变量数据格式(包含在WfAppRunner属性中)
+        "DynamicVariables": {
+            "SignForwardType": "SignForwardBefore",
+            "SignForwardCompleteOrder": 2,
+            "CompareType":  "Count"
+        }
+
+2. 实现会签加签通过率两种类型(个数和百分比)的全覆盖功能；
+
+3. 修正Gateway节点之后Transition定义的ReceiverType类型未能获取的BUG；
+
+4. 实现跨Gateway节点退回的功能(OrSplit单一分支撤回)。
+
+
+### Slickflow(1.5.7) 企业版更新说明:
+1. Slickflow.Designer 设计器项目全面重构编写，更新如下：
+
+  1). 升级到ASP.NET MVC5;
+  
+  2). 升级到BOOTSTRAP3.3.7；
+  
+  3). 图形库框架升级到JSPLUMB2.2.8，图形体验更流畅；
+  
+  4). AG-Grid取代SlickGrid，AG-Grid在开源社区方面的建设更加完善；
+  
+2. 项目解决方案VS2017版本建立。
+
+### Slickflow(1.5.6) 企业版更新说明：
+1. 提供获取流程发起人的流程图连线定义（Transition property page）
+2. 修正子流程节点变量名称改变后的条件判断处理；
 
 
 ### Slickflow(1.5.5) Demo版本功能说明：
