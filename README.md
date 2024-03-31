@@ -1,4 +1,5 @@
 ## Slickflow
+**Current Version:NET6**
 
 ![](https://img.shields.io/github/stars/besley/slickflow.svg) 
 ![](https://img.shields.io/github/forks/besley/slickflow.svg) 
@@ -9,13 +10,30 @@
 
 
 **A Quick Design and Testing Demo:**  
-![Large Order Demo](https://github.com/besley/besley.github.io/blob/master/Gif/slickflow-largeorder-andsplit-demo-en.gif)
+![And Split Demo](https://github.com/besley/besley.github.io/blob/master/Gif/slickflow-andsplit-demo.gif)
+
+**Quick Start Tutorial for Designer Project:**  
+1). In the command console, using the command **npm install** to download the node package.
+
+   please notice to run the command, the directory location is in the **ClientApp** path of the **sfd** project.
+
+2). Set up the **sfdapi** project which is an asp.net webapi type project.(IIS is a choice)
+
+3). Setting webapi variable in the **kcofnig.js** file
+
+    kconfig.webApiUrl = "http://localhost/sfdapic/" //your sfd webapi backend service url
+
+4). In the command console, using the command **npm run dev** to the the project
+
+5). Access the web project in the browser by 
+
+    ** http://localhost:5000 **
 
 **.NET/.NETCore Workflow Engine With Full Source Code** 
 1. **.NET, .NET CORE version both supported**  
- Slickflow is an open-source project based on .NET5; It's easy to use engine product into the cross-platform application.  
+ Slickflow is an open-source project based on .NET6; It's easy to use engine product into the cross-platform application.  
 2. **BPMN graphic style process diagram**   
- Slickflow is using BPMN notation to describe process diagram, the Slickflow designer is HTML5 graph editor and user-friendly to business process communication and business analysis.  
+ Slickflow is using BPMN2 notation to describe process diagram, the Slickflow designer is HTML5 graph editor and user-friendly to business process communication and business analysis.  
 3. **High performance with Dapper.NET library**  
  Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of speed and is virtually as fast as using a raw ADO.NET data reader. An ORM is an Object Relational Mapper, which is responsible for mapping between database and programming language.
 (Ref: https://dapper-tutorial.net/dapper)  
@@ -129,8 +147,6 @@
 **Email: sales@ruochisoft.com**  
 **QQ(Author): 47743901**
 
-**Quick Start Tutorial:**  
-https://github.com/besley/Slickflow/wiki/Slickflow-Quick-Start-Tutorial  
 **Wiki Page:**  
 https://github.com/besley/Slickflow/wiki  
 **CodeProject Articles:**  
@@ -143,6 +159,8 @@ http://www.slickflow.com
 http://www.slickflow.com/demo/index  
 **Designer Demo:**  
 http://demo.slickflow.com/sfd/  
+**Modeler Start Tutorial:**  
+https://github.com/besley/Slickflow/wiki/Slickflow-Quick-Start-Tutorial  
 **Modeler Demo:**  
 http://demo.slickflow.com/sfd/model  
 **Document:**  
@@ -153,7 +171,28 @@ The SlickQua project:http://github.com/besley/slickqua/
 
 ![AskForLeave Form Approval](https://github.com/besley/besley.github.io/blob/master/Gif/SlickQua-Ask4Leave-Demo.gif)  
 
-**Slickflow(1.7.7.0) 企业版：** 
+**Slickflow(2.0.0.0) 企业版：** 
+
+2022-07-10
+1. 集成BpmnJS 设计器，XML模式转换为BPMN2;
+2. 重构Slickflow.Engine项目;
+3. 重写ProcessModelBPMN，适应BPMN2模型;
+
+2022-04-26
+1. 全部项目.NET6版本实现；
+2. 技术文档资料同步更新；
+3. ServiceTask节点类型实现;
+4. NET6版本测试工作完成；
+
+2021-09-28
+1. 引擎增加三种类型的中间事件(Intermediate)处理节点定时、消息和条件；
+2. 重新调整HangFire作业功能，检测流程实例活动实例的JobTimer数据；
+3. 简化并合并语言本地化项目，只保留Engine, Desiger和Web三种项目类型；
+
+2021-07-18
+1. 完成动态表单设计器Quasar版，并发版；
+2. 完成Quasar版本的多语言及提示组件配置和开发；
+3. 完成新版本WebDemo请假项目的开发，测试并发布；
 
 2021-04-29
 1. 引擎产品升级到.NET5版本；
